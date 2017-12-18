@@ -1,0 +1,87 @@
+form(action="/mailer", method="POST")
+    .container
+        p
+        // radio (mr. mrs. ms. dr)
+        input(type='radio', name='title', value='Mr.')
+        | Mr.
+        |             
+        input(type='radio', name='title', value='Mrs.')
+        | Mrs.
+        |             
+        input(type='radio', name='title', value='Ms.')
+        | Ms.
+        |             
+        input(type='radio', name='title', value='Dr.')
+        | Dr.
+        |         
+        p
+        // first name (text)
+        label(for='firstName') First Name:
+        |             
+        input(type='text', name='firstName', required='', autofocus='')
+        // last name (text)
+        label(for='lastName') Last Name:
+        |             
+        input(type='text', name='lastName', required='')
+        |         
+        p
+        // street (text)
+        label(for='street') Street:
+        |             
+        input(type='text', name='street')
+        // city (text)
+        label(for='city') City:
+        |             
+        input(type='text', name='city')
+        |         
+        p
+        // state (dropdown: nj, ny, pa, ct)
+        label(for='state') State:
+        |             
+        select(name='state')
+            option(value='NJ') NJ
+            |                 
+            option(value='NY') NY
+            |                 
+            option(value='PA') PA
+            |                 
+            option(value='CT') CT
+        // zip (text)
+        label(for='zip') Zip:
+        |             
+        input(type='number', name='zip')
+        |         
+        p
+        // Phone (text?)
+        label(for='phone') Phone:
+        |             
+        input(type='number', name='phone')
+        |         
+        p
+        // email (text?)
+        label(for='email') Email:
+        |             
+        input(type='email', name='email')
+        |         
+        p
+        // contact (checkbox: phone mail email any (default))
+        | How may we contact you?
+        input(type='checkbox', name='cbPhone')
+        |             
+        label(for='cbPhone') Phone
+        |             
+        input(type='checkbox', name='cbMail')
+        |             
+        label(for='cbMail') Mail
+        |             
+        input(type='checkbox', name='cbEmail')
+        |             
+        label(for='cbEmail') Email
+        |             
+        input(type='checkbox', name='any', checked='')
+        |             
+        label(for='any') Any
+        |
+        p
+        |         
+        button.btn.btn-info(type='submit') Send me spam forever!

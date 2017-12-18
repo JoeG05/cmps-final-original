@@ -1,0 +1,50 @@
+include includes/head.pug
+body
+    h1 Welcome to the contacts page
+    container
+        table.table
+            tr
+                th Name
+                th Address
+                th Phone
+                th Email
+                th Contact By Phone
+                th Contact By Email
+                th Contact By Mail
+                th Edit
+                th Delete
+            each person in people
+                tr
+                    td.name #{person.name}
+                    td.address #{person.address}
+                    td.phone #{person.phone}
+                    td.email #{person.email}
+                    if person.cbPhone || person.any
+                        td Yes
+                    else
+                        td No
+                    if person.cbEmail || person.any
+                        td Yes
+                    else
+                        td No
+                    if person.cbMail || person.any
+                        td Yes
+                    else
+                        td No
+                    td
+                        //- button.btn.btn-success(title="Edit")
+                        //-     span.glyphicon.glyphicon-pencil
+                        a.button.btn.btn-success(href="/contacts/" + person._id) 
+                            span.glyphicon.glyphicon-pencil
+                    td
+                        a.button.btn.btn-danger(href="/contacts/" + person._id + "/delete")
+                            span.glyphicon.glyphicon-trash
+                    td.hidden.lat #{person.lat}
+                    td.hidden.lng #{person.lng}
+                    td.hidden.id #{person._id}
+                    
+    p
+        a(href="/mailer") Mailer
+    #mapContainer
+        div#map 
+include /includes/foot.pug

@@ -1,0 +1,16 @@
+include /includes/head.pug
+body  
+  div#login.container
+    div: form(method='post', class='form-vertical')
+      
+        div.form-group
+          label Username:
+          input.form-control(name='username', autofocus)
+
+        div.form-group
+          label Password:
+          input.form-control(name='password', type='password')
+
+        div.form-actions
+            input.btn.btn-primary(type='submit', value='Login')
+include /includes/foot.pug
